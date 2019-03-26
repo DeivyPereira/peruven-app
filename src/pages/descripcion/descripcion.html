@@ -1,0 +1,62 @@
+<button ion-button top class=" botonclose" on-click="atras()">X</button>
+
+<ion-content class="cuadrogris centrado" padding>
+  <p no-margin padding class="titulonegro centrar">Descripción del paquete</p>
+
+  <div margin-top class="cuadroblanco">
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Lugar de origen</p>
+      <p no-padding no-margin class="letranegra">{{data.clients.city}}, {{data.clients.country}}</p>
+    </div>
+
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Lugar de destino</p>
+      <p no-padding no-margin class="letranegra">{{data.client_afiliated.city}}, {{data.client_afiliated.country}}</p>
+    </div>
+
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Codigo del paquete</p>
+      <p no-padding no-margin class="letranegra">{{data.id}}</p>
+    </div>
+
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Codigo tealca</p>
+      <p no-padding no-margin class="letranegra">{{data.tealca_code}}</p>
+    </div>
+
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Oficina Final</p>
+      <p no-padding no-margin class="letranegra">{{data.tealca_office}}</p>
+    </div>
+
+    <div col-12 class="margint">
+      <p no-padding no-margin class="letragris">Precio total</p>
+      <p no-padding no-margin class="letranegra">{{data.price}}</p>
+    </div>
+
+    <ion-item class="margint" no-padding>
+      <ion-select
+        no-padding
+        placeholder="Acción"
+        style="min-width: 100%;"
+        cancelText="Cancelar"
+        okText="Aceptar"
+      >
+        <ion-option value="recepcion">Recepcion</ion-option>
+        <ion-option value="despacho">Despacho</ion-option>
+        <ion-option value="incidencia">Incidencia</ion-option>
+        <ion-option value="entregado">Entregado</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button
+      margin-bottom
+      on-click="goToTrackingPage()"
+      style="height: 25px"
+      ion-button
+      class="boton centrado margint"
+    >
+      Agregar estado
+    </button>
+  </div>
+</ion-content>

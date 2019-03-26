@@ -1,0 +1,71 @@
+<ion-content padding style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;">
+  <ion-row>
+    <ion-col no-padding col-8>
+        <img float-left style="width: 70%;" src="/assets/imgs/logoperuven.png" >
+    </ion-col>
+    <ion-col col-4>
+        <p no-margin class="letrablanca" style="text-align:center">Lenguaje</p>
+        
+            <ion-col no-padding col-6>
+                <button class="a" no-padding float-right small ion-button clear >Es</button>
+            </ion-col>
+            <ion-col no-padding col-6>
+                <button class="a" no-padding float-right small ion-button clear >En</button>
+            </ion-col>
+    </ion-col>
+  </ion-row>
+
+  <div style="width:100%; height: 25%" class="spacer"></div>
+
+
+  <div *ngIf="!buttonClicked">
+        <div>
+            <button on-click="goToListapedidosPage()" small ion-button clear class="titulos">Pedidos</button>
+        </div>
+        <div>
+            <button on-click="goToListapagosPage()" ion-button small clear class="titulos">Pagos</button>
+        </div>
+        <div>
+            <button ion-button small clear class="titulos">Soporte</button>
+        </div>
+      </div>
+      
+
+      <div *ngIf="buttonClicked">
+            <div>
+                <button on-click="goToMapaPage()" small ion-button clear class="titulos">Mapa</button>
+            </div>
+            <div>
+                <button on-click="goToTrackingPage()" ion-button small clear class="titulos">Tracking</button>
+            </div>
+            <div>
+                <button ion-button small clear class="titulos">Soporte</button>
+            </div>
+          </div>
+          
+                
+  <div style="width:100%; height: 10%" class="spacer"></div>
+
+  <ion-row>
+    <img src="/assets/imgs/profile_icon_3x.png"  class="imgperfil">
+  </ion-row>
+
+  <ion-row>
+        <div>
+                <p style="display:inline-block" class="letrablanca"> Bienvenido</p>
+                <p style="display:inline-block" class="letraverde"> Alex Bracamonte</p>
+        </div>
+    <button on-click="goToConfigPage()" no-padding ion-button clear icon-start class="letrablanca">
+        <ion-icon name="build"></ion-icon>
+        <p style="text-transform: capitalize;">Configuración</p>
+    </button>
+</ion-row>
+<ion-row>
+    <button on-click="goToIniciosesionPage()" no-padding ion-button clear icon-start class="letraverde">
+        <ion-icon name="log-out"></ion-icon>
+        <p style="text-transform: capitalize;">Cerrar Sesión</p>
+    </button>
+  </ion-row>
+  
+  
+</ion-content>

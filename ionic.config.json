@@ -1,0 +1,7 @@
+{
+  "name": "Peruven",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

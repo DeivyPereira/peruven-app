@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+        <ion-col no-padding col-2>
+            <button on-click="atras()" clear ion-button icon-only color="light">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+              </button>
+        </ion-col>
+        <ion-col no-padding col-8>
+            <ion-title >Mapa</ion-title>
+        </ion-col>
+        <ion-col no-padding col-2>
+            <button on-click="goToMenuPage()" float-right clear ion-button icon-only color="light">
+              </button>
+        </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;">
+  <div id="map"></div>
+</ion-content>
