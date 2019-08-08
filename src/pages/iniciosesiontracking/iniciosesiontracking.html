@@ -1,0 +1,51 @@
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;"
+>
+  <ion-row>
+    <img
+      margin
+      float-left
+      block
+      class="logoslider"
+      src="/assets/imgs/logoperuven.png"
+    />
+  </ion-row>
+
+  <div class="spacer" style="width: 100%; height: 30%;"></div>
+
+  <h3 margin-left class="titulos">Codigo Tracking </h3>
+
+  <ion-list>
+    <ion-item class="transparent centrado">
+      <ion-input
+        type="text"
+        placeholder="Codigo Tracking"
+        [(ngModel)]="code"
+        class="placeholdersmall"
+      ></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="spacer" style="width: 100%; height: 5%;"></div>
+
+  <button
+    on-click="Realizar()"
+    ion-button
+    class="boton centrado"
+  >
+    Localizar
+  </button>
+
+  <button
+    on-click="goToRegistro()"
+    ion-button
+    clear
+    class="centrado"
+    color="light"
+    style="font-style:italic;font-size:12px;"
+  >
+    Tengo una cuenta creada.
+  </button>
+</ion-content>

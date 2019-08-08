@@ -1,15 +1,31 @@
-<!--
-  Generated template for the DetalletrackingPage page.
+<button ion-button top class=" botonclose" on-click="atras()">X</button>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>detalletracking</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="cuadrogris centrado" padding>
+  <p no-margin padding class="titulonegro centrar">Package List</p>
 
-<ion-content padding>
+  <div class="cuadroblanco" *ngFor="let item of items">
+    <div col-12 padding-top padding-bottom class="lineapunteada">
+      <p no-padding no-margin class="letragris">Producto</p>
+      <p no-padding no-margin class="letranegra">{{ item.description }}</p>
 
+      <p no-padding no-margin class="letragris">Cantidad</p>
+      <p no-padding no-margin class="letranegra">{{ item.qty }}</p>
+      <p no-padding no-margin class="letragris">Producto Asegurado</p>
+      <p no-padding no-margin class="letranegra" *ngIf="item.ensurance==1">Si</p>
+      <p no-padding no-margin class="letranegra" *ngIf="item.ensurance==0">No</p>
+
+      <p no-padding no-margin class="letragris" *ngIf="item.category">
+        Categoria
+      </p>
+      <p no-padding no-margin class="letranegra" *ngIf="item.category">
+        {{ item.category.name }}
+      </p>
+      <p no-padding no-margin class="letragris" *ngIf="item.subcategory">
+        Categoria
+      </p>
+      <p no-padding no-margin class="letranegra" *ngIf="item.subcategory">
+        {{ item.category.name }}
+      </p>
+    </div>
+  </div>
 </ion-content>

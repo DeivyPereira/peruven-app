@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  ModalController,
+  LoadingController,
+  AlertController,
+  ViewController
+} from "ionic-angular";
+import { ApiProvider } from "../../providers/api/api";
 import { MenuPage } from '../menu/menu';
 
 /**
@@ -15,19 +24,92 @@ import { MenuPage } from '../menu/menu';
   templateUrl: 'config.html',
 })
 export class ConfigPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  public data: any;
+  public items: any;
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController,
+    public api: ApiProvider,
+    public loadingController: LoadingController,
+    public alertCtrl: AlertController) {
+    this.getUser()
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ConfigPage');
+    console.log('ionViewDidLoad DetallepedidoPage');
   }
   atras(params) {
     this.viewCtrl.dismiss();
   }
-  
-  goToMenuPage(params){
-    if (!params) params = {};   
-    this.navCtrl.push(MenuPage);
+  getUser() {
+    console.log('Entro a buscar usuario')
+    let loading = this.loadingController.create({
+      content: "Cargando..."
+    });
+    loading.present();
+    this.api.get("getuser").subscribe(
+      jwt => {
+        loading.dismiss();
+        if (jwt) {
+          this.items = jwt;
+          if (this.items.status == true) {
+            console.log(this.items.data)
+            this.data = this.items.data
+          } else {
+            console.log('No Existe codigo')
+          }
+        } else {
+          console.log("Error de Conexion");
+        }
+      },
+      err => {
+        console.log(err)
+        loading.dismiss();
+      }
+    );
   }
+  Realizar() {
+    let sav = {
+      name: this.data.name,
+      phone: this.data.phone,
+      country: this.data.country,
+      password: this.data.password
+     };
+     let loading = this.loadingController.create({
+       content: "Cargando..."
+     });
+     loading.present();
+     this.api.put("user/" + this.data.id, sav).subscribe(
+       jwt => {
+         loading.dismiss();
+         if (jwt) {
+           this.items = jwt;
+           if (this.items.status == true) {
+             const alert = this.alertCtrl.create({
+               title: 'Datos Modificados',
+               buttons: ['OK']
+             });
+             alert.present();
+             this.viewCtrl.dismiss();
+           } else {
+             const alert = this.alertCtrl.create({
+               title: 'Problema!',
+               subTitle: 'Hubo un problema al intentar modificar los datos, vuelve a intentarlo',
+               buttons: ['Volver a Intentar']
+             });
+             alert.present();
+           }
+         } else {
+           const alert = this.alertCtrl.create({
+             title: 'Problema!',
+             subTitle: 'Hubo un problema al intentar modificar los datos, vuelve a intentarlo',
+             buttons: ['Volver a Intentar']
+           });
+           alert.present();
+         }
+       },
+       err => {
+         console.log(err)
+         loading.dismiss();
+       }
+     );
+   }
 }

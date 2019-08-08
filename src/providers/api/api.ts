@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UrlProvider } from "../../providers/url/url";
-
 /*
   Generated class for the ApiProvider provider.
 
@@ -10,14 +9,13 @@ import { UrlProvider } from "../../providers/url/url";
 */
 @Injectable()
 export class ApiProvider {
-  jwtTokenName = 'jwt_venetronic';
   token:any
   //httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'aplication/json' }) };
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'aplication/json' }) };
   constructor(
     public http: HttpClient,
     public url: UrlProvider) {
-      this.url.myGlobalVar='http://104.197.180.47/peruven/api';
+      //this.url.myGlobalVar='http://104.197.180.47/peruven/api';
     //this.getToken();
   }
 

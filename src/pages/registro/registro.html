@@ -1,46 +1,101 @@
-<ion-content padding style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;">
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;"
+>
   <ion-row>
-      <img margin float-left block class="logoslider" src="/assets/imgs/logoperuven.png" >
+    <ion-col no-padding col-2>
+      <button on-click="atras()" clear ion-button icon-only color="light">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-col>
+    <img
+      float-left
+      block
+      class="logoslider"
+      src="/assets/imgs/logoperuven.png"
+    />
   </ion-row>
-  
+
   <div class="spacer" style="width: 100%; height: 5%;"></div>
 
   <h3 margin-left class="titulos">Registrar</h3>
 
   <ion-list>
-      <ion-item class="transparent centrado">
-          <input style="font-size:15px;" type="text" placeholder="Nombre">
-      </ion-item>
-  
-      
-      <ion-item class="transparent centrado">
-          <input style="font-size:15px;" type="email" placeholder="Correo Electrónico">
-      </ion-item>
-  
-      
-      <ion-item class="transparent centrado">
-          <input style="font-size:15px;" type="text" placeholder="Usuario">
-      </ion-item>
-  
-      
-      <ion-item class="transparent centrado">
-          <input style="font-size:15px;" type="password" placeholder="Contraseña">
-      </ion-item>
-  
-      
-      <ion-item class="transparent centrado">
-          <input style="font-size:15px;" type="password" placeholder="Repetir Contraseña">
-      </ion-item>
-  </ion-list>
+    <ion-item class="transparent centrado">
+      <input
+        style="font-size:15px;"
+        type="text"
+        placeholder="Nombre"
+        [(ngModel)]="person.shipper"
+      />
+    </ion-item>
 
+    <ion-item class="transparent centrado">
+      <ion-select
+        class="select-class"
+        placeholder="Seleccionar Identificación"
+        [(ngModel)]="person.doc_type"
+        name="doc_type"
+        style="color: white;"
+      >
+        <ion-option *ngFor="let item of doc_types" [value]="item.value">{{
+          item.text
+        }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="transparent centrado">
+      <input
+        style="font-size:15px;"
+        type="number"
+        placeholder="Numero de Identificación"
+        [(ngModel)]="person.number"
+      />
+    </ion-item>
+    <ion-item class="transparent centrado">
+      <input
+        style="font-size:15px;"
+        type="email"
+        placeholder="Correo Electrónico"
+        [(ngModel)]="person.email"
+      />
+    </ion-item>
+
+    <ion-item class="transparent centrado">
+      <input
+        style="font-size:15px;"
+        type="text"
+        placeholder="Telefono"
+        [(ngModel)]="person.phone"
+      />
+    </ion-item>
+
+    <ion-item class="transparent centrado">
+      <input
+        style="font-size:15px;"
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="person.password"
+      />
+    </ion-item>
+  </ion-list>
+  <small  style="color:white;"
+    >Si has enviado encomiendas con nosotros, al registrarte se te asignara
+    automáticamente esos envios</small
+  >
   <div class="spacer" style="width: 100%; height: 5%;"></div>
 
-  <button on-click="goToIniciosesion()" ion-button class="boton centrado">
-      Registrar
+  <button on-click="Registro()" ion-button class="boton centrado">
+    Registrar
   </button>
 
-  <button on-click="goToIniciosesion()"ion-button clear class="centrado" color="light" style="font-style:italic;font-size:12px;">
-      ¿Ya tienes cuenta? Inicia sesión
+  <button
+    on-click="goToIniciosesion()"
+    ion-button
+    clear
+    class="centrado"
+    color="light"
+    style="font-style:italic;font-size:12px;"
+  >
+    ¿Ya tienes cuenta? Inicia sesión
   </button>
-
 </ion-content>

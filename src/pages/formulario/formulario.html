@@ -1,11 +1,33 @@
-<button ion-button  top class=" botonclose" on-click="atras()">X</button>
-
-
+<button ion-button top class="botonclose" on-click="atras()">X</button>
 <ion-content class="cuadrogris centrado" padding>
-
-
-
-
-           
-
+  <p no-margin padding class="titulonegro centrar">Agregar Estado</p>
+  <ion-row>
+    <ion-col col-12>
+      <p no-margin >Estado:</p>
+      <ion-select
+        class="select-class"
+        placeholder="Seleccionar Estado"
+        [(ngModel)]="location"
+        name="location"
+      >
+        <ion-option *ngFor="let item of states" [value]="item">{{
+          item
+        }}</ion-option>
+      </ion-select>
+    </ion-col>
+    <div class="spacer" style="width: 100%; height: 40px;"></div>
+    <ion-col col-12>
+      <ion-label style="margin: 15px 8px 13px 10px;">Observaciones</ion-label>
+      <ion-textarea
+        [(ngModel)]="description"
+        rows="30"
+        cols="10"
+        placeholder="Ingrese aqui el mensaje que deseas adjuntar"
+      ></ion-textarea>
+    </ion-col>
+    <div class="spacer" style="width: 100%; height: 120px;"></div>
+    <button on-click="Realizar()" ion-button class="boton centrado">
+      Guardar Estado
+    </button>
+  </ion-row>
 </ion-content>

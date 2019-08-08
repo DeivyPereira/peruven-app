@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { IniciosesionPage } from '../iniciosesion/iniciosesion';
-import { RegistroPage } from '../registro/registro';
+import { MenuOfflinePage } from '../menu-offline/menu-offline';
 
 @Component({
   selector: 'page-home',
@@ -12,14 +11,8 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-  goToIniciosesion(params){
+  goToMenu(params){
     if (!params) params = {};   
-    this.navCtrl.push(IniciosesionPage);
+    this.navCtrl.push(MenuOfflinePage);
   }
-  
-  goToRegistro(params){
-    if (!params) params = {};   
-    this.navCtrl.push(RegistroPage);
-  }
-  
 }

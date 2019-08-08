@@ -15,19 +15,24 @@ import { DetallepedidoPage } from '../detallepedido/detallepedido';
   templateUrl: 'pedido.html',
 })
 export class PedidoPage {
-
+  public data: any;
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController) {
+    this.data = navParams.get("data");
+    this.data = this.data.items;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PedidoPage');
+    console.log('Entro a Pedido')
+    console.log(this.data)
   }
   atras(params) {
     this.viewCtrl.dismiss();
   }
-  abrirmodal() {
-    const modal = this.modalCtrl.create(DetallepedidoPage);
+  goToDetalletrackingPage() {
+    console.log(this.data)
+    const modal = this.modalCtrl.create(DetallepedidoPage, {
+      data: this.data
+    });
     modal.present();
   }
-
 }

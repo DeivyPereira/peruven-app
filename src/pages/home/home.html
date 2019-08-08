@@ -1,57 +1,87 @@
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover; width:100%"
+>
+  <ion-slides pager class="bannertablet">
+    <ion-slide
+      class="bannertablet"
+      style="background: url(/assets/imgs/technology_gradient_3x.png) no-repeat center;background-size:cover;"
+    >
+      <ion-grid>
+        <ion-row>
+          <img
+            margin
+            float-left
+            block
+            class="logoslider "
+            src="/assets/imgs/logoperuven.png"
+          />
+        </ion-row>
+        <ion-row class="contenidoslider">
+          <h3>Nuestra TECNOLOGIA</h3>
+          <p no-margin>
+            Creamos las herramientas tecnológicas para facilitar tu experiencia
+            puedes rastrear tus envios desde tu computadora tablet o teléfono,
+            en tiempo real con codigo QR
+            <i
+              class="fa fa-qrcode"
+              aria-hidden="true"
+              style="margin-right: 5px;"
+            ></i>
+          </p>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
 
+    <ion-slide
+      class="bannertablet"
+      style="background: url(/assets/imgs/aliance_gradient_3x.png) no-repeat center;background-size:cover;"
+    >
+      <ion-grid>
+        <ion-row>
+          <img
+            margin
+            float-left
+            block
+            class="logoslider centrado"
+            src="/assets/imgs/logoperuven.png"
+          />
+        </ion-row>
+        <ion-row class="contenidoslider">
+          <h3>Nuestra Alianza</h3>
+          <p no-margin>
+            Contamos con acuerdos y alianzas con los principales proveedores de
+            servicios de envio
+          </p>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
 
-<ion-content padding  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover; width:100%" >
+    <ion-slide
+      class="bannertablet"
+      style="background: url(/assets/imgs/team_gradient_3x.png) no-repeat center;background-size:cover;"
+    >
+      <ion-grid>
+        <ion-row>
+          <img
+            margin
+            float-left
+            block
+            class="logoslider "
+            src="/assets/imgs/logoperuven.png"
+          />
+        </ion-row>
+        <ion-row class="contenidoslider">
+          <h3>EQUIPO</h3>
+          <p no-margin>Equipo inteligente, capacitado y con disciplina</p>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
 
-    <ion-slides pager class="bannertablet">
+  <div class="spacer" style="width:100%; height: 5%"></div>
 
-        <ion-slide class="bannertablet" style="background: url(/assets/imgs/aliance_gradient_3x.png) no-repeat center;background-size:cover;">
-          <ion-grid>
-            <ion-row>
-                <img margin float-left block class="logoslider centrado" src="/assets/imgs/logoperuven.png" >
-            </ion-row>
-            <ion-row class="contenidoslider">
-                <h3>Nuestra Alianza</h3> 
-                <p no-margin>Contamos con acuerdos y alianzas con los principales proveedores de servicios de envio</p>
-            </ion-row>
-          </ion-grid>
-        </ion-slide>
-      
-
-        <ion-slide class="bannertablet" style="background: url(/assets/imgs/team_gradient_3x.png) no-repeat center;background-size:cover;">
-          <ion-grid>
-            <ion-row>
-                <img margin float-left block class="logoslider " src="/assets/imgs/logoperuven.png" >
-            </ion-row>
-            <ion-row class="contenidoslider">
-                <h3>EQUIPO</h3> 
-                <p no-margin>Equipo inteligente, capacitado y con disciplina</p>
-            </ion-row>
-          </ion-grid>
-        </ion-slide>
-      
-
-        <ion-slide class="bannertablet" style="background: url(/assets/imgs/technology_gradient_3x.png) no-repeat center;background-size:cover;">
-          <ion-grid>
-            <ion-row>
-                <img margin float-left block class="logoslider " src="/assets/imgs/logoperuven.png" >
-            </ion-row>
-            <ion-row class="contenidoslider">
-                <h3> Nuestra TECNOLOGIA</h3> 
-                <p no-margin>Creamos las herramientas tecnológicas para facilitar tu experiencia puedes cotizar, reservar y rastrear tus embarques desde tu computadora tablet o teléfono</p>
-            </ion-row>
-          </ion-grid>
-        </ion-slide>
-    
-      </ion-slides>
-
-      <div class="spacer" style="width:100%; height: 5%"></div>
-
-      <button on-click="goToIniciosesion()" ion-button outline class="boton centrado">
-          Iniciar Sesión
-      </button>
-      <button on-click="goToRegistro()"ion-button clear class="centrado" color="light" style="font-style:italic;font-size:12px;">
-          ¿No tienes cuenta? crea una aquí
-      </button>
-
-   </ion-content>
-
+  <button on-click="goToMenu()" ion-button outline class="boton centrado">
+    SALTAR
+  </button>
+</ion-content>

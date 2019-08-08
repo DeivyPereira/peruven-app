@@ -11,8 +11,8 @@ import { Injectable } from '@angular/core';
 export class UrlProvider {
   public myGlobalVar: string;
   constructor(public http: HttpClient) {
-    this.myGlobalVar="http://104.197.180.47/peruven/api"
-    //this.myGlobalVar="http://localhost/api-artsign"
+    this.myGlobalVar="http://enviosperuven.com/api/"
+    //this.myGlobalVar="http://localhost/peruven-api/"
   }
 
 }

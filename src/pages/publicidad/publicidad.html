@@ -1,0 +1,16 @@
+<button ion-button top class=" botonclose" on-click="atras()">X</button>
+
+<ion-content class="cuadrogris centrado" padding>
+  <p no-margin padding class="titulonegro centrar">{{item.title}}</p>
+
+  <div class="cuadroblanco"  >
+    <div col-12 padding-top padding-bottom class="lineapunteada" *ngIf="item.img">
+      <img src="{{item.img}}" class="img-responsive " id="img2" >
+    </div>
+    <div col-12 padding-top padding-bottom class="lineapunteada" >
+      <p no-padding no-margin class="letranegra">
+        {{item.description}}
+      </p>
+    </div>
+  </div>
+</ion-content>

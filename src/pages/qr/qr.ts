@@ -5,11 +5,14 @@ import {
   NavParams,
   ModalController,
   LoadingController,
-  AlertController
+  AlertController,
+  ViewController
 } from "ionic-angular";
 import { DescripcionPage } from "../descripcion/descripcion";
+import { TrackingPage } from "../tracking/tracking";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { ApiProvider } from "../../providers/api/api";
+import { UrlProvider } from "../../providers/url/url";
 /**
  * Generated class for the QrPage page.
  *
@@ -27,15 +30,20 @@ export class QrPage {
   public buttonText: string;
   classIcon: any;
   public loading: boolean;
-
+  public data: any;
+  public isPublic: any = true;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
     private _barcodeScanner: BarcodeScanner,
     public api: ApiProvider,
-    public loadingController: LoadingController
-  ) {}
+    public loadingController: LoadingController,
+    public alertCtrl: AlertController,
+    public viewCtrl: ViewController,
+    public url: UrlProvider
+  ) {
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad QrPage");
@@ -43,14 +51,9 @@ export class QrPage {
     this.buttonText = "Scan";
     this.loading = false;
   }
-
-  goToDescripcionPage(data) {
-    const modal = this.modalCtrl.create(DescripcionPage, {
-      data: data
-    });
-    modal.present();
+  atras(params) {
+    this.viewCtrl.dismiss();
   }
-
   public scanQR() {
     this.buttonText = "Cargando..";
     this.loading = true;
@@ -86,13 +89,30 @@ export class QrPage {
       jwt => {
         loading.dismiss();
         if (jwt) {
-          let data = jwt;
-          this.goToDescripcionPage(data);
+          this.data = jwt;
+          if(this.data.status==true){
+            this.navCtrl.push(TrackingPage, {
+              data: this.data
+            });
+          }else{
+            const alert = this.alertCtrl.create({
+              title: 'Scaneo de Paquete',
+              subTitle: 'No se pudo localizar el paquete, vuelve a intentarlo.',
+              buttons: ['OK']
+            });
+            alert.present();
+          }
         } else {
-          console.log("Error de Conexion");
+          const alert = this.alertCtrl.create({
+            title: 'Scaneo de Paquete',
+            subTitle: 'No se pudo localizar el paquete, vuelve a intentarlo.',
+            buttons: ['OK']
+          });
+          alert.present();
         }
       },
       err => {
+        console.log(err)
         loading.dismiss();
       }
     );

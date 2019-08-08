@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { DetallepedidoPage } from '../detallepedido/detallepedido';
 /**
  * Generated class for the DetalletrackingPage page.
  *
@@ -14,12 +14,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'detalletracking.html',
 })
 export class DetalletrackingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public data: any;
+  public items: any;
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController) {
+    this.data = navParams.get("data");
+    this.items = this.data.products;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetalletrackingPage');
+    console.log('Entro a Package List')
+    console.log(this.items)
+  }
+  atras(params) {
+    this.viewCtrl.dismiss();
   }
 
 }

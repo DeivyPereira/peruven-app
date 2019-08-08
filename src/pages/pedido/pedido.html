@@ -1,203 +1,237 @@
 <ion-header>
-        <ion-toolbar>
-          <ion-row>
-              <ion-col no-padding col-2>
-                  <button on-click="atras()" clear ion-button icon-only color="light">
-                      <ion-icon name="ios-arrow-back"></ion-icon>
-                    </button>
-              </ion-col>
-              <ion-col no-padding col-8>
-                  <ion-title >Detalles de pedido</ion-title>
-              </ion-col>
-              <ion-col no-padding col-2>
-                  <button float-right clear ion-button icon-only color="light">
-                    </button>
-              </ion-col>
-          </ion-row>
-        </ion-toolbar>
-      </ion-header>
-
-  <ion-content padding style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;">
-<div class="cuadroverde centrado">
-  
-  <ion-row >
-      <div col-12  style="border-bottom: 1px solid darkblue">
-          <p no-padding no-margin class="letrablanca3">Quien recibe</p>
-          <p no-padding no-margin class="letrablanca2">
-            Carlos Vargas
-          </p>
-      </div>
-  
-      <div col-6>
-          <p no-padding no-margin class="letrablanca3">Telefono</p>
-          <p no-padding no-margin class="letrablanca">
-            04162221122
-          </p>
-      </div>
-  
-      <div col-6>
-          <p no-padding no-margin class="letrablanca3">Zip code</p>
-          <p no-padding no-margin class="letrablanca">
-            7001
-          </p>
-      </div>
-  
-      <div col-6>
-          <p no-padding no-margin class="letrablanca3">Ciudad</p>
-          <p no-padding no-margin class="letrablanca">
-              Caracas
-          </p>
-      </div>
-      <div col-6>
-          <p no-padding no-margin class="letrablanca3">País</p>
-          <p no-padding no-margin class="letrablanca">
-              Venezuela
-          </p>
-      </div>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button on-click="atras()" clear ion-button icon-only color="light">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>Detalles de pedido</ion-title>
+      </ion-col>
+      <ion-col no-padding col-2>
+        <button float-right clear ion-button icon-only color="light"></button>
+      </ion-col>
     </ion-row>
-</div>
+  </ion-toolbar>
+</ion-header>
 
-<div style="width:100%; height: 3%" class="spacer"></div>
-
-<ion-row>
-    <ion-col col-3 style="text-align: right;">
-        <div>
-          <ion-icon class="icon-contenedor" name="archive"></ion-icon>
-        </div>
-
-        <div>
-            <ion-icon class="icon-contenedor" name="clipboard"></ion-icon>
-          </div>
-
-          <div>
-              <ion-icon class="icon-contenedor icon-contenedor-active" name="jet"></ion-icon>
-            </div>
-
-            <div>
-                <ion-icon class="icon-contenedor" name="alarm"></ion-icon>
-              </div>
-
-              <div>
-                  <ion-icon class="icon-contenedor" name="home"></ion-icon>
-                </div>
-                    
-
-    </ion-col>
-    <ion-col col-2>
-
-        <div>
-      <div class="contenedorgrid contenedorgridup contenedorverde "></div>
-      <div class="contenedorgrid contenedorverde "></div>
-      <div class="contenedorgrid contenedorverde"></div>
-      <div class="contenedorgrid "></div>
-      <div class="contenedorgrid contenedorgridbuttom "></div>
-    </div>
-    </ion-col>
-    <ion-col col-7>
-        <div>
-            <p no-padding no-margin class="letragris">Codigo de encomienda</p>
-            <p no-padding no-margin class="letrablanca2">G- 2198</p>
-        </div>
-        <div class="margint">
-            <p no-padding no-margin class="letragris">Estado</p>
-            <p no-padding no-margin class="letrablanca2">Enviado</p>
-        </div>
-        <div class="margint">
-            <p no-padding no-margin class="letragris">Piezas</p>
-            <p no-padding no-margin class="letrablanca2">49</p>
-        </div>
-        <div class="margint">
-            <p no-padding no-margin class="letragris">Peso</p>
-            <p no-padding no-margin class="letrablanca2">2,34 Kg</p>
-        </div>
-        <div class="margint">
-            <p no-padding no-margin class="letragris">Precio</p>
-            <p no-padding no-margin class="letrablanca2">$ 49.00</p>
-        </div>
-        
-    </ion-col>
-</ion-row>
-
-<div style="width:100%; height: 50%" class="spacer"></div>
-
-<div margin-left margin-bottom>
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;"
+>
+  <div margin-left margin-bottom>
     <p no-padding no-margin class="letragris">Fecha de envio</p>
-    <p no-padding no-margin class="letrablanca2">Lun. 29 Feb. 2019 9:28am</p>
-</div>
-
-<div class="cuadroblanco">
-
-    <div col-12 padding-top padding-bottom class="lineapunteada">
-            <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-            <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-        
-            <p no-padding no-margin class="letragris">Estado </p>
-            <p no-padding no-margin class="letranegra">Enviado</p>
-       
-            <p no-padding no-margin class="letragris">Descripcion </p>
-            <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-       </div>
-
-
-       <div col-12 padding-top padding-bottom class="lineapunteada">
-            <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-            <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-        
-            <p no-padding no-margin class="letragris">Estado </p>
-            <p no-padding no-margin class="letranegra">Procesado </p>
-       
-            <p no-padding no-margin class="letragris">Descripcion </p>
-            <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-       </div>
-
-
-       <div col-12 padding-top padding-bottom class="lineapunteada">
-            <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-            <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-        
-            <p no-padding no-margin class="letragris">Estado </p>
-            <p no-padding no-margin class="letranegra">Recibidos</p>
-       
-            <p no-padding no-margin class="letragris">Descripcion </p>
-            <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-       </div>
-</div>
-
-<div class="cuadroverde centrado">
-<ion-row >
-    <div col-12  style="border-bottom: 1px solid darkblue">
-        <p no-padding no-margin class="letrablanca3">Quien envia</p>
+    <p no-padding no-margin class="letrablanca2">{{ data.package.out_date }}</p>
+  </div>
+  <div class="cuadroverde centrado">
+    <ion-row>
+      <div col-12 style="border-bottom: 1px solid darkblue">
+        <p no-padding no-margin class="letrablanca3">Quien recibe</p>
         <p no-padding no-margin class="letrablanca2">
-          Laura Gomez
+          {{ data.client_afiliated.attention }}
         </p>
-    </div>
+      </div>
 
-    <div col-6>
+      <div col-6>
         <p no-padding no-margin class="letrablanca3">Telefono</p>
         <p no-padding no-margin class="letrablanca">
-          999000111
+          {{ data.client_afiliated.phone }}
         </p>
-    </div>
+      </div>
 
-    <div col-6>
-        <p no-padding no-margin class="letrablanca3">Zip code</p>
+      <div col-6>
+        <p no-padding no-margin class="letrablanca3">Correo</p>
         <p no-padding no-margin class="letrablanca">
-          4300
+          {{ data.client_afiliated.email }}
         </p>
-    </div>
+      </div>
 
-    <div col-6>
+      <div col-6>
         <p no-padding no-margin class="letrablanca3">Ciudad</p>
         <p no-padding no-margin class="letrablanca">
-            Lima
+          {{ data.client_afiliated.city }}
         </p>
-    </div>
-    <div col-6>
+      </div>
+      <div col-6>
         <p no-padding no-margin class="letrablanca3">País</p>
         <p no-padding no-margin class="letrablanca">
-            Peru
+          {{ data.client_afiliated.country }}
         </p>
-    </div>
+      </div>
+      <div col-6>
+          <p no-padding no-margin class="letrablanca3">Contactar</p>
+          <p no-padding no-margin class="letrablanca">
+            <a href="tel:{{ data.client_afiliated.phone }}">
+              <button icon ion-button color="secondary" class="boton centrar">
+                Llamar
+              </button></a
+            >
+          </p>
+        </div>
+      <div col-12>
+        <p no-padding no-margin class="letrablanca3">Oficina de Tealca</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.tealca_office }}
+        </p>
+      </div>
+    </ion-row>
+  </div>
+
+  <div style="width:100%; height: 3%" class="spacer"></div>
+
+  <div class="cuadroverde centrado">
+    <ion-row>
+      <div col-12 style="border-bottom: 1px solid darkblue">
+        <p no-padding no-margin class="letrablanca3">Quien envia</p>
+        <p no-padding no-margin class="letrablanca2">
+          {{ data.clients.contact_person }}
+        </p>
+      </div>
+
+      <div col-6>
+        <p no-padding no-margin class="letrablanca3">Telefono</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.clients.phone }}
+        </p>
+      </div>
+
+      <div col-6>
+        <p no-padding no-margin class="letrablanca3">Email</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.clients.email }}
+        </p>
+      </div>
+
+      <div col-6>
+        <p no-padding no-margin class="letrablanca3">Ciudad</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.clients.city }}
+        </p>
+      </div>
+      <div col-6>
+        <p no-padding no-margin class="letrablanca3">País</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.clients.country }}
+        </p>
+      </div>
+      <div col-6>
+          <p no-padding no-margin class="letrablanca3">Contactar</p>
+          <p no-padding no-margin class="letrablanca">
+            <a href="tel:{{ data.clients.phone }}">
+              <button icon ion-button color="secondary" class="boton centrar">
+                Llamar
+              </button></a
+            >
+          </p>
+        </div>
+      <div col-12>
+        <p no-padding no-margin class="letrablanca3">Dirección</p>
+        <p no-padding no-margin class="letrablanca">
+          {{ data.clients.address }}
+        </p>
+      </div>
+    </ion-row>
+  </div>
+
+  <div style="width:100%; height: 3%" class="spacer"></div>
+  <ion-row>
+    <ion-col col-12 style="text-align: center;">
+      <div>
+        <button
+          on-click="goToDetalletrackingPage()"
+          small
+          ion-button
+          class="titulos"
+        >
+          Ver tracking
+        </button>
+      </div>
+    </ion-col>
   </ion-row>
-</div>
+  <ion-row>
+    <div style="width:100%; height: 50px" class="spacer"></div>
+    <ion-col col-3 style="text-align: right;">
+      <div>
+        <ion-icon class="icon-contenedor" name="archive"></ion-icon>
+      </div>
+      <div>
+        <ion-icon class="icon-contenedor" name="clipboard"></ion-icon>
+      </div>
+      <div>
+        <ion-icon class="icon-contenedor" name="jet"></ion-icon>
+      </div>
+      <div>
+        <ion-icon class="icon-contenedor" name="alarm"></ion-icon>
+      </div>
+
+      <div>
+        <ion-icon class="icon-contenedor" name="home"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col col-2>
+      <div>
+        <div class="contenedorgrid contenedorgridup contenedorverde "></div>
+        <div class="contenedorgrid contenedorverde "></div>
+        <div class="contenedorgrid contenedorverde"></div>
+        <div class="contenedorgrid contenedorverde "></div>
+        <div class="contenedorgrid contenedorverde"></div>
+        <div class="contenedorgrid contenedorverde contenedorgridbuttom "></div>
+      </div>
+    </ion-col>
+    <ion-col col-7>
+      <div>
+        <p no-padding no-margin class="letragris">Codigo de encomienda</p>
+        <p no-padding no-margin class="letrablanca2">{{ data.tracking }}</p>
+      </div>
+      <div class="margint">
+        <p no-padding no-margin class="letragris">Estado</p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.status == 0">
+          En Origen
+        </p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.status == 1">
+          Enviado
+        </p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.status == 2">
+          En Transito
+        </p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.status == 3">
+          En Destino
+        </p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.status == 4">
+          Entregado
+        </p>
+      </div>
+      <div class="margint">
+        <p no-padding no-margin class="letragris">Piezas</p>
+        <p no-padding no-margin class="letrablanca2">
+          {{ data.products?.length || "0" }}
+        </p>
+      </div>
+      <div class="margint">
+        <p no-padding no-margin class="letragris">Modalidad</p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.modality == 1">
+          Pago en Origen
+        </p>
+        <p no-padding no-margin class="letrablanca2" *ngIf="data.modality == 2">
+          Pago en Destino
+        </p>
+      </div>
+      <div class="margint">
+        <p no-padding no-margin class="letragris">Precio</p>
+        <p no-padding no-margin class="letrablanca2">
+          {{ data.total }} {{ data.currency }}
+        </p>
+      </div>
+      <div class="margint">
+        <p no-padding no-margin class="letragris">Seguro</p>
+        <p no-padding no-margin class="letrablanca2">
+          {{ data.total_ensurance }}
+          <small>{{ data.currency_ensurance }}</small>
+        </p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div style="width:100%; height: 50%" class="spacer"></div>
 </ion-content>

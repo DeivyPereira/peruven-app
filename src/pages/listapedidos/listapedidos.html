@@ -1,168 +1,176 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-row>
-          <ion-col no-padding col-2>
-              <button on-click="atras()" clear ion-button icon-only color="light">
-                  <ion-icon name="ios-arrow-back"></ion-icon>
-                </button>
-          </ion-col>
-          <ion-col no-padding col-8>
-              <ion-title >Pedidos</ion-title>
-          </ion-col>
-          <ion-col no-padding col-2>
-              <button on-click="goToMenuPage()" float-right clear ion-button icon-only color="light">
-                </button>
-          </ion-col>
-      </ion-row>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button on-click="atras()" clear ion-button icon-only color="light">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>Pedidos</ion-title>
+      </ion-col>
+      <ion-col no-padding col-2>
+        <button
+          on-click="goToMenuPage()"
+          float-right
+          clear
+          ion-button
+          icon-only
+          color="light"
+        ></button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-content padding style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;">
-      <div padding class="cuadrogris centrado">
-
-        <ion-searchbar margin-bottom no-padding class="centrado"></ion-searchbar>
-
-
-
-      <!-- Inicio del ticket-->
-      <div  margin-bottom>
-          <div class="cuadroblanco" style="margin-bottom: -3px">
-            <ion-row>
-                <div col-12 on-click="goToPedidoPage()">
-                    <p no-padding no-margin class="letragris"> Codigo de encomienda</p>
-                    <p no-padding no-margin class="letranegra">
-                      <ion-icon margin-right name="briefcase"></ion-icon> 
-                      G- 2198
-                      <ion-icon color="primary"  size="large" float-right name="arrow-dropright-circle"></ion-icon>
-                    </p>
-                </div>
-                  
-                
-                <div col-6>
-                    <p no-padding no-margin class="letragris">Desde</p>
-                    <p no-padding no-margin class="letranegra">
-                        <ion-icon margin-right name="mail"></ion-icon>
-                      LIM
-                    </p>
-                </div>
-        
-                
-                <div col-6>
-                    <p no-padding no-margin class="letragris">Hasta</p>
-                    <p no-padding no-margin class="letranegra">
-                        <ion-icon margin-right name="mail-open"></ion-icon>
-                      CCS
-                    </p>
-                </div>
-                
-                <div col-6 class="lineapunteada">
-                    <p no-padding no-margin class="letragris">Zip code</p>
-                    <p no-padding no-margin class="letranegra">7001</p>
-                </div>
-        
-                
-                <div col-6 class="lineapunteada">
-                    <p no-padding no-margin class="letragris">Zip code</p>
-                    <p no-padding no-margin class="letranegra">4040</p>
-                </div>
-        
-            </ion-row>
-            <ion-row margin-top>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Piezas</p>
-                    <p no-padding no-margin class="letranegra">48</p>
-                </div>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Peso (Kg)</p>
-                    <p no-padding no-margin class="letranegra">2.85</p>
-                </div>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Precio total</p>
-                    <p no-padding no-margin class="letranegra">39.00 </p>
-                </div>
-                <div col-12>
-                    <p no-padding margin-right no-margin style="display: inline-block" class="letragris"> Fecha de envío</p>
-                    <p no-padding no-margin style="display: inline-block" class="letranegra">24/02/19</p>
-                </div>
-                <div col-12>
-                    <p no-padding margin-right no-margin style="display: inline-block" class="letragris"> Estado</p>
-                    <p no-padding no-margin style="display: inline-block" class="letranegra">Enviado</p>
-                </div>
-            </ion-row>
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;"
+>
+  <div padding class="cuadrogris centrado" *ngIf="data">
+    <ion-searchbar margin-bottom no-padding class="centrado" placeholder="Buscar"></ion-searchbar>
+    <!-- Inicio del ticket-->
+    <div margin-bottom *ngFor="let item of data">
+      <div class="cuadroblanco" style="margin-bottom: -3px">
+        <ion-row>
+          <div col-12>
+            <p no-padding no-margin class="letragris">Codigo de encomienda</p>
+            <p no-padding no-margin class="letranegra">
+              <ion-icon margin-right name="briefcase"></ion-icon>
+              T- {{ item.tracking }}
+              <ion-icon
+                color="primary"
+                float-right
+                name="arrow-dropright-circle"
+                on-click="goToPedidoPage(item)"
+              ></ion-icon>
+            </p>
           </div>
-          <img src="/assets/imgs/detalle_ticket_imagen_2x.png" >
-        </div> <!-- Fin del ticket-->
 
-        <!-- Inicio del ticket-->
-      <div  margin-bottom>
-          <div class="cuadroblanco" style="margin-bottom: -3px">
-            <ion-row>
-                <div col-12>
-                    <p no-padding no-margin class="letragris"> Codigo de encomienda</p>
-                    <p no-padding no-margin class="letranegra">
-                      <ion-icon margin-right name="briefcase"></ion-icon> 
-                      G- 2198
-                      <ion-icon color="primary" float-right name="arrow-dropright-circle"></ion-icon>
-                    </p>
-                </div>
-                  
-                
-                <div col-6>
-                    <p no-padding no-margin class="letragris">Desde</p>
-                    <p no-padding no-margin class="letranegra">
-                        <ion-icon margin-right name="mail"></ion-icon>
-                      LIM
-                    </p>
-                </div>
-        
-                
-                <div col-6>
-                    <p no-padding no-margin class="letragris">Hasta</p>
-                    <p no-padding no-margin class="letranegra">
-                        <ion-icon margin-right name="mail-open"></ion-icon>
-                      CCS
-                    </p>
-                </div>
-                
-                <div col-6 class="lineapunteada">
-                    <p no-padding no-margin class="letragris">Zip code</p>
-                    <p no-padding no-margin class="letranegra">7001</p>
-                </div>
-        
-                
-                <div col-6 class="lineapunteada">
-                    <p no-padding no-margin class="letragris">Zip code</p>
-                    <p no-padding no-margin class="letranegra">4040</p>
-                </div>
-        
-            </ion-row>
-            <ion-row margin-top>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Piezas</p>
-                    <p no-padding no-margin class="letranegra">48</p>
-                </div>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Peso (Kg)</p>
-                    <p no-padding no-margin class="letranegra">2.85</p>
-                </div>
-                <div col-4>
-                    <p no-padding no-margin class="letragris">Precio total</p>
-                    <p no-padding no-margin class="letranegra">39.00 </p>
-                </div>
-                <div col-12>
-                    <p no-padding margin-right no-margin style="display: inline-block" class="letragris"> Fecha de envío</p>
-                    <p no-padding no-margin style="display: inline-block" class="letranegra">24/02/19</p>
-                </div>
-                <div col-12>
-                    <p no-padding margin-right no-margin style="display: inline-block" class="letragris"> Estado</p>
-                    <p no-padding no-margin style="display: inline-block" class="letranegra">Enviado</p>
-                </div>
-            </ion-row>
+          <div col-6>
+            <p no-padding no-margin class="letragris">Desde</p>
+            <p no-padding no-margin class="letranegra">
+              <ion-icon margin-right name="mail"></ion-icon>
+              {{ item.clients.country }}
+            </p>
           </div>
-          <img src="/assets/imgs/detalle_ticket_imagen_2x.png" >
-        </div> <!-- Fin del ticket-->
 
+          <div col-6>
+            <p no-padding no-margin class="letragris">Hasta</p>
+            <p no-padding no-margin class="letranegra">
+              <ion-icon margin-right name="mail-open"></ion-icon>
+              {{ item.client_afiliated.country }}
+            </p>
+          </div>
 
+          <div col-12 class="lineapunteada">
+            <p no-padding no-margin class="letragris">Oficina de Tealca</p>
+            <p no-padding no-margin class="letranegra">
+              <small>{{ item.tealca_office }}</small>
+            </p>
+          </div>
 
-      </div> <!--Cuadro gris-->
+          <div col-12 class="lineapunteada">
+            <p no-padding no-margin class="letragris">Dirección</p>
+            <p no-padding no-margin class="letranegra">
+              <small>{{ item.tealca_direction }}</small>
+            </p>
+          </div>
+        </ion-row>
+        <ion-row margin-top>
+          <div col-4>
+            <p no-padding no-margin class="letragris">Piezas</p>
+            <p no-padding no-margin class="letranegra">
+              {{ item.products?.length || "N/A" }}
+            </p>
+          </div>
+          <div col-4>
+            <p no-padding no-margin class="letragris">Peso (Kg)</p>
+            <p no-padding no-margin class="letranegra">
+              {{ item.products?.weight || "N/A" }}
+            </p>
+          </div>
+        
+          <div col-12>
+            <p
+              no-padding
+              margin-right
+              no-margin
+              style="display: inline-block"
+              class="letragris"
+            >
+              Fecha de envío
+            </p>
+            <p
+              no-padding
+              no-margin
+              style="display: inline-block"
+              class="letranegra"
+            >
+              {{ item.package.out_date }}
+            </p>
+          </div>
+          <div col-12>
+            <p
+              no-padding
+              margin-right
+              no-margin
+              style="display: inline-block"
+              class="letragris"
+            >
+              Estado
+            </p>
+            <p
+            no-padding
+            no-margin
+            style="display: inline-block"
+            class="letranegra"
+              *ngIf="item.status == 0"
+            >
+              En Origen
+            </p>
+            <p
+            no-padding
+            no-margin
+            style="display: inline-block"
+            class="letranegra"
+              *ngIf="item.status == 1"
+            >
+              Enviado
+            </p>
+            <p
+            no-padding
+            no-margin
+            style="display: inline-block"
+            class="letranegra"
+              *ngIf="item.status == 2"
+            >
+              En Transito
+            </p>
+            <p
+            no-padding
+            no-margin
+            style="display: inline-block"
+            class="letranegra"
+              *ngIf="item.status == 3"
+            >
+              En Destino
+            </p>
+            <p
+            no-padding
+            no-margin
+            style="display: inline-block"
+            class="letranegra"
+              *ngIf="item.status == 4"
+            >
+              Entregado
+            </p>
+          </div>
+        </ion-row>
+      </div>
+      <img src="/assets/imgs/detalle_ticket_imagen_2x.png"     />
+    </div>
+    <!-- Fin del ticket-->
+  </div>
+  <!--Cuadro gris-->
 </ion-content>

@@ -180,8 +180,7 @@
   height: 50px;
   background: transparent;
   font-size: 12px;
-  border: none;
-  LINE-HEIGHT: 12px; }
+  border: none; }
 
 .sangria {
   text-indent: 20px; }
@@ -697,17 +696,33 @@ width: 70%;
     margin-bottom: 10px;
     height: 6%; 
 }
-.transparent input, .transparent select {
-    font-size: 20px;
+.transparent input {
+    font-size: 14px;
     background-color: transparent;
     border: none;
     color: white;
 }
-
+.transparent password {
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.transparent select {
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+ion-select{
+  font-size: 16px;
+  max-width: 100%;
+}
 .boton {
     height: 5%;
     width: 60%;
     border-radius: 20px; 
+    min-height: 30px;
 }
   
 .centrado {
@@ -729,6 +744,18 @@ margin-right: auto;
     color:#FFFFFF !important;
     font-size:20px !important;
     text-align: left;
+}
+
+
+.apeque{
+  font-size: 12px; 
+  color: grey;
+}
+.apeque:hover {
+  color: #25A976;
+}
+.apeque:active {
+    color: #25A976;
 }
 
 .a{
@@ -1004,4 +1031,17 @@ background: rgba(0,0,0,0.7)
   background-color: #fafafa;
   -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
   box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+
+.placeholdersmall::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 8px;
+}
+.placeholdersmall::-moz-placeholder { /* Firefox 19+ */
+  font-size: 8px;
+}
+.placeholdersmall:-ms-input-placeholder { /* IE 10+ */
+  font-size: 8px;
+}
+.placeholdersmall:-moz-placeholder { /* Firefox 18- */
+  font-size: 8px;
 }

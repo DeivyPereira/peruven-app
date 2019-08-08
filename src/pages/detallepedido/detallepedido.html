@@ -1,45 +1,20 @@
-<button ion-button  top class=" botonclose" on-click="atras()">X</button>
-
+<button ion-button top class=" botonclose" on-click="atras()">X</button>
 
 <ion-content class="cuadrogris centrado" padding>
+  <p no-margin padding class="titulonegro centrar">Detalles de estado</p>
 
-<p no-margin padding class="titulonegro centrar">Detalles de estado</p>
+  <div class="cuadroblanco" *ngFor="let item of items" >
+    <div col-12 padding-top padding-bottom class="lineapunteada" >
+      <p no-padding no-margin class="letragris">Fecha y hora del cambio</p>
+      <p no-padding no-margin class="letranegra">{{item.created}}</p>
 
-<div class="cuadroblanco">
+      <p no-padding no-margin class="letragris">Localización</p>
+      <p no-padding no-margin class="letranegra">{{item.location}}</p>
 
-        <div col-12 padding-top padding-bottom class="lineapunteada">
-                <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-                <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-            
-                <p no-padding no-margin class="letragris">Estado </p>
-                <p no-padding no-margin class="letranegra">Enviado</p>
-           
-                <p no-padding no-margin class="letragris">Descripcion </p>
-                <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-           </div>
-
-
-           <div col-12 padding-top padding-bottom class="lineapunteada">
-                <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-                <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-            
-                <p no-padding no-margin class="letragris">Estado </p>
-                <p no-padding no-margin class="letranegra">Procesado </p>
-           
-                <p no-padding no-margin class="letragris">Descripcion </p>
-                <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-           </div>
-
-
-           <div col-12 padding-top padding-bottom class="lineapunteada">
-                <p no-padding no-margin class="letragris">Fecha y hora del cambio </p>
-                <p no-padding no-margin class="letranegra">Lun. 29 Feb. 2019 9:28am</p>
-            
-                <p no-padding no-margin class="letragris">Estado </p>
-                <p no-padding no-margin class="letranegra">Recibidos</p>
-           
-                <p no-padding no-margin class="letragris">Descripcion </p>
-                <p no-padding no-margin class="letranegra">Enviado en el vuelo 988-9 laser</p>
-           </div>
-</div>
+      <p no-padding no-margin class="letragris">Descripcion</p>
+      <p no-padding no-margin class="letranegra">
+        {{item.description}}
+      </p>
+    </div>
+  </div>
 </ion-content>

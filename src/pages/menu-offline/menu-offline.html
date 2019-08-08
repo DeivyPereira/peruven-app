@@ -1,0 +1,61 @@
+<ion-content
+  padding
+  style="background: url(/assets/imgs/background_1x.png) no-repeat center;background-size:cover;"
+>
+  <ion-row>
+    <ion-col no-padding col-8>
+      <img
+        float-left
+        style="width: 70%;"
+        src="/assets/imgs/logoperuven.png"
+        on-click="goToIniciosesion()"
+      />
+    </ion-col>
+  </ion-row>
+  <div style="width:100%; height: 25%" class="spacer"></div>
+  <div>
+    <div>
+      <button on-click="goToQR()" small ion-button clear class="titulos">
+        <i
+          class="fa fa-qrcode"
+          aria-hidden="true"
+          style="margin-right: 5px;"
+        ></i>
+        RASTREA TU PAQUETE
+      </button>
+    </div>
+    <div>
+      <button
+        on-click="goToIniciosesionTracking()"
+        ion-button
+        small
+        clear
+        class="titulos"
+      >
+        <i
+          class="fa fa-sign-in-alt"
+          aria-hidden="true"
+          style="margin-right: 5px;"
+        ></i>
+        INICIAR SESIÓN
+      </button>
+    </div>
+    <div>
+      <button ion-button small clear class="titulos" on-click="goToRegistro()">
+        <i class="fa fa-save" aria-hidden="true" style="margin-right: 5px;"></i>
+        REGISTRATE GRATIS
+      </button>
+    </div>
+    <div>
+      <button ion-button small clear class="titulos" on-click="goToMapa()">
+        <i
+          class="fa fa-map-signs"
+          aria-hidden="true"
+          style="margin-right: 5px;"
+        ></i>
+        SUCURSALES
+      </button>
+    </div>
+  </div>
+  <div style="width:100%; height: 10%" class="spacer"></div>
+</ion-content>
