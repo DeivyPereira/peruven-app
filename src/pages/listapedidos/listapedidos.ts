@@ -13,6 +13,7 @@ import { TrackingPage } from "../tracking/tracking";
 import { ApiProvider } from "../../providers/api/api";
 import { PedidoPage } from '../pedido/pedido';
 import { MenuPage } from '../menu/menu';
+import { DetalletrackingPage } from "../detalletracking/detalletracking";
 /**
  * Generated class for the ListapedidosPage page.
  *
@@ -49,6 +50,13 @@ export class ListapedidosPage {
     });
   }
 
+  goToPackageList(item) {
+    console.log(this.data)
+    const modal = this.modalCtrl.create(DetalletrackingPage, {
+      data: item
+    });
+    modal.present();
+  }
   goToMenuPage(params){
     if (!params) params = {};   
     this.navCtrl.push(MenuPage);

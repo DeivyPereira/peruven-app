@@ -11,7 +11,6 @@ import {
 import { DescripcionPage } from "../descripcion/descripcion";
 import { TrackingPage } from "../tracking/tracking";
 import { ApiProvider } from "../../providers/api/api";
-
 /**
 /**
  * Generated class for the DetallepedidoPage page.

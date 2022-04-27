@@ -27,7 +27,7 @@ declare var google;
 export class MapaPage {
   map: any;
   markersM: any= [];
-  markers: any;
+  markers: any= [];
   constructor(
     public navCtrl: NavController,
     public viewCtrl: ViewController,
@@ -82,7 +82,8 @@ export class MapaPage {
       let marker = new google.maps.Marker({
         position: myLatLng,
         map: this.map,
-        title: "Mi Posición"
+        title: "Mi Posición",
+		icon: "https://agente.artsignsoluciones.com/uploads/map/bluecircle.png"
       });
       mapEle.classList.add("show-map");
     });

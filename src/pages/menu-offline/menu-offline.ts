@@ -4,6 +4,7 @@ import { IniciosesionPage } from '../iniciosesion/iniciosesion';
 import { IniciosesionclientePage } from '../iniciosesioncliente/iniciosesioncliente';
 import { RegistroPage } from '../registro/registro';
 import { MapaPage } from "../mapa/mapa";
+import { SoportePage } from "../soporte/soporte";
 import { QrPage } from "../qr/qr";
 
 /**
@@ -56,5 +57,9 @@ export class MenuOfflinePage {
   goToMapa(params){
     if (!params) params = {};   
     this.navCtrl.push(MapaPage);
+  }
+  goToSoporte(params){
+    if (!params) params = {};   
+    this.navCtrl.push(SoportePage);
   }
 }
